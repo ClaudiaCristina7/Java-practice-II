@@ -6,11 +6,9 @@ public class PrimitiveEX4 {
         char c = 'c';
 
         /*
-            Este posibil sa adun o variabila de tip int cu o variabila de tip char?
-            Practic un numar cu un caracter?
-            Raspuns: DA! Deoarece variabilele de tip char sunt reprezentate de numere
-            link: https://www.javatpoint.com/char-keyword-in-java (Primitiva 'char').
-            Acest link va ajuta pentru a intelge primitiva 'char' https://www.asciitable.com/
+            Is it possible to add an int type variable to a char type variable?
+            Basically a number with a character?
+            Answer: YES! Since variables of type char are represented by numbers
          */
         int adunare = x + c;
         System.out.println(adunare);
