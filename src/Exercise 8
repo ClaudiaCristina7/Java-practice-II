@@ -1,0 +1,81 @@
+import java.util.Scanner;
+
+public class Exer8 {
+    public static void main(String[] args) {
+//Write a code in which you create an interactive console through which the user can choose options from 1 to 3.
+// When starting the program, a message with possible options will have to appear.
+//	a) For option 1, the user will have to enter a number from 1 to 10.
+//	If the number isn't in this range, you'll see an error message.
+
+//	b) For option 2 the user will have to enter two integers and their sum will be displayed
+
+//	c) For option 3 the user will have to enter a positive integer number (verification will be made)
+//	and based on it will display all numbers from 0 to it.
+
+        Scanner scanner = new Scanner(System.in);
+        int option;
+
+        do {
+            System.out.println("Choose an option:");
+            System.out.println("1. Option 1 - Enter a number from 1 to 10");
+            System.out.println("2. Option 2 - Enter two integers");
+            System.out.println("3. Option 3 - Enter a positive integer");
+            System.out.println("Enter your choice (1-3): ");
+
+            option = scanner.nextInt();
+
+            switch (option) {
+                case 1:
+                    int number = scanner.nextInt();
+
+                    if (number >= 1 && number <= 10) {
+                        System.out.println("The number you've entered is: " + number);
+                    } else {
+                        System.out.println("Error! The number you've entered does not meet the request");
+                    }
+                    break;
+                case 2:
+
+                    int number1 = scanner.nextInt();
+
+                    System.out.println("Insert a integer number:");
+
+                    int number2 = scanner.nextInt();
+
+                    System.out.println("Insert a second integer number:");
+
+                    int sum = number1 + number2;
+
+                    System.out.println("The sum of the two numbers is: " + sum);
+
+                    scanner.close();
+                    break;
+                case 3:
+
+                    int number3;
+                    do {
+                        System.out.println("Insert a positive number:");
+                        while (!scanner.hasNextInt()) {
+                            System.out.println("Error:Insert a positive number:");
+                            scanner.next();
+                        }
+                        number3 = scanner.nextInt();
+                    } while (number3 <= 0);
+
+                    for (int i = 0; i <= number3; i++) {
+                        System.out.print(i + " ");
+                    }
+
+                    scanner.close();
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Please select a valid option.");
+            }
+        }
+        while (option != 0);
+
+        scanner.close();
+    }
+
+}
