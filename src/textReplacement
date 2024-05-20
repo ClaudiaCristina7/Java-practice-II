@@ -1,0 +1,31 @@
+//The following text is given:
+//"My name is Full Name, and I'm a student in Facebook's testing course."
+//Write a program to correct the text and replace the wrong words:
+//1. "NameSurname" - will be replaced by student name.
+//2. "testing" - will be replaced by the type of course you are attending.
+//3. "Facebook" - will be replaced by the name of the company where you are taking the course
+
+import java.util.Scanner;
+
+
+public class textReplace {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        String defaultText = "My name is fullName, and I'm a student in Facebook's testing course.";
+
+        System.out.print("Enter full name: ");
+        String fullName = scanner.nextLine();
+
+        System.out.print("Enter courseName: ");
+        String courseName = scanner.nextLine();
+
+        System.out.print("Enter companyName: ");
+        String companyName = scanner.nextLine();
+
+        defaultText = defaultText.replaceFirst("fullName", fullName);
+        defaultText = defaultText.replaceFirst("testing", courseName);
+        defaultText = defaultText.replaceFirst("Facebook", companyName);
+
+        System.out.println(defaultText);
+    }
+}
