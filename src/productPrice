@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class productsPrice {
+    public static void main(String [] args){
+
+        Scanner scanner = new Scanner(System.in);
+
+        int productPrice = 25;
+
+        System.out.print("Enter a product name: ");
+        String productName = scanner.nextLine();
+
+        System.out.print("Enter the quantity: ");
+        int quantity = scanner.nextInt();
+
+        double totalPrice = productPrice * quantity;
+
+        System.out.println("For the product " + productName + " in quantity of " + quantity +" " + "the total price is: " + totalPrice);
+
+        scanner.close();
+    }
+}
+
+
