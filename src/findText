@@ -1,0 +1,26 @@
+//Two String variables are read from the keyboard, one of which will represent any text,
+// and the second represents a keyword that will be searched in the text.
+//   It is required to count the number of times the keyword appears in that text.
+
+import java.util.Scanner;
+
+public class findText {
+    public static void main (String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter text:");
+        String text = scanner.nextLine();
+
+        System.out.println("Enter a keyword to find in the text:");
+        String keyword = scanner.nextLine();
+        int count = 0;
+        int index = text.indexOf(keyword);
+
+        while (index != -1) {
+            count++;
+            index = text.indexOf(keyword, index + 1);
+        }
+
+        System.out.println("The keyword '" + keyword + "' appears " + count + " times in the text.");
+
+    }
+}
