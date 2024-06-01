@@ -1,0 +1,10 @@
+//For the below text, write a code to display it in lowercase and then in upperCase
+//"I have decided to ho my homework today"
+
+public class lowerAndUpperCase {
+    public static void main(String[] args){
+    String textToDisplay = "I have decided to ho my homework today.";
+        System.out.println(textToDisplay.toLowerCase());
+        System.out.println(textToDisplay.toUpperCase());
+    }
+}
