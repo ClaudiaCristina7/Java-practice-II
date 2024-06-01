@@ -1,0 +1,24 @@
+//Create a program in which strings will be read from keyboard until user enters the text:"stop";
+
+
+import java.util.Scanner;
+
+public class stringsReading {
+    public static void main (String [] args){
+
+        Scanner scanner = new Scanner(System.in);
+        String word = "";
+
+        while (!word.equalsIgnoreCase("stop")) {
+            System.out.print("Enter a word: ");
+            word = scanner.nextLine();
+
+            if (!word.equalsIgnoreCase("stop")) {
+
+                System.out.println("You have entered the word: " + word);
+            }
+        }
+        System.out.println("Program finished");
+        scanner.close();
+    }
+}
