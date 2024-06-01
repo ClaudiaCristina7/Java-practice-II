@@ -1,0 +1,26 @@
+//Andrei is a student in the 5th grade.
+// Andrei was not a good student and the teacher had him write on the blackboard 100 times:
+// "I will no longer be a disobedient student"
+//Andrei is intelligent and uses programming to write the message on boards 100 times. Help Andrew.
+
+
+import java.util.Scanner;
+
+public class textMultiplication {
+    public static void main(String[] args){
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a text: ");
+        String text = scanner.nextLine();
+
+        if (text.equalsIgnoreCase("I will no longer be a disobedient student")) {
+            for (int i = 0; i < 100; i++) {
+                System.out.println("I will no longer be a disobedient student");
+            }
+        } else {
+            System.out.println("The text you've entered is incorrect.");
+        }
+        scanner.close();
+    }
+}
