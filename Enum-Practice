@@ -1,0 +1,97 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class Main {
+
+
+//An enum will be created in JAVA with 4 values defining the seasons of the year.
+//An enum will be created that holds the months of the year
+// (such as their number and abbreviations and the season to which they belong).
+// EX: JANUARY(1, "JAN", Season.WINTER");
+//The date of birth will be read from the keyboard in dd-MM-yyyy format,
+// from where the month number will be extracted (checks will be made that the entered data is valid).
+//Create a method that displays in the desired format the name,
+// abbreviation and season corresponding to the month extracted from the date of birth read.
+
+    public enum Season {
+        Spring,
+        Summer,
+        Autumn,
+        Winter,
+    }
+
+
+//Enum for the year months
+
+    public enum Month {
+        JANUARY(1, "JAN", Season.Winter),
+        FEBRUARY(2, "FEB", Season.Winter),
+        MARCH(3, "MAR", Season.Spring),
+        APRIL(4, "APR", Season.Spring),
+        MAY(5, "MAY", Season.Spring),
+        JUNE(6, "JUN", Season.Summer),
+        JULY(7, "JUL", Season.Summer),
+        AUGUST(8, "AUG", Season.Summer),
+        SEPTEMBER(9, "SEP", Season.Autumn),
+        OCTOBER(10, "OCT", Season.Autumn),
+        NOVEMBER(11, "NOV", Season.Autumn),
+        DECEMBER(12, "DEC", Season.Winter);
+
+        private int number;
+        private String abbreviation;
+        private Season season;
+
+        Month(int number, String abbreviation, Season season) {
+            this.number = number;
+            this.abbreviation = abbreviation;
+            this.season = season;
+        }
+
+        public int getNumber() {
+            return number;
+        }
+
+        public String getAbbreviation() {
+            return abbreviation;
+        }
+
+        public Season getSeason() {
+            return season;
+        }
+
+        public static Month getMonthByNumber(int number) {
+            for (Month month : Month.values()) {
+                if (month.getNumber() == number) {
+                    return month;
+                }
+            }
+            return null;
+        }
+    }
+
+
+//Method for the data regarding the birth month:
+
+
+
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter your date of birth in format dd-MM-yyyy: ");
+            String dateOfBirthInput = scanner.next();
+
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+            LocalDate dateOfBirth = LocalDate.parse(dateOfBirthInput, formatter);
+
+            int numberBirthMonth = dateOfBirth.getMonthValue();
+            Month birthMonth = Month.getMonthByNumber(numberBirthMonth);
+            if (birthMonth != null) {
+                System.out.println("Birth Month: " + birthMonth.name());
+                System.out.println("Abbreviation: " + birthMonth.getAbbreviation());
+                System.out.println("Season: " + birthMonth.getSeason().name());
+            } else {
+                System.out.println("The date you've entered is invalid.");
+
+        }
+    }
+}
